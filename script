@@ -1,0 +1,46 @@
+CREATE USER cruduser2@localhost identified BY 'cruduser2';
+GRANT usage ON *.* TO cruduser2@localhost identified BY 'cruduser2';
+CREATE DATABASE IF NOT EXISTS test;
+GRANT ALL privileges ON test.* TO cruduser2@localhost;
+USE test;
+CREATE TABLE User
+  (
+     id        INT(8) PRIMARY KEY AUTO_INCREMENT,
+     name VARCHAR(25),
+     age  int,
+     isAdmin tinyint(1) NOT NULL DEFAULT '0',
+     createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  ); 
+
+INSERT INTO test.User (name, age, isAdmin) 
+VALUES 
+('Name1',1,1),
+('Name2',2,0),
+('Name3',3,1),
+('Name4',4,0),
+('Name5',5,1),
+('Name6',6,0), 
+('Name7',7,1),
+('Name8',8,0),
+('Name8',9,1),
+('Name10',10,0), 
+('Name11',11,1),
+('Name12',12,0),
+('Name13',13,1),
+('Name14',14,0),
+('Name15',15,1),
+('Name16',16,0),
+('Name17',17,1),
+('Name18',18,0),
+('Name19',19,1),
+('Name20',20,0),
+('Name21',21,1),
+('Name22',22,0),
+('Name23',23,1),
+('Name24',24,0),
+('Name25',25,1),
+('Name26',26,0),
+('Name27',27,1),
+('Name28',28,0),
+('Name29',29,1),
+('Name30',30,0);

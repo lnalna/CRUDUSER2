@@ -27,7 +27,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/cbvjrbweklbvebvjfbjjb/createUser")
+    @RequestMapping("/createUser")
     public ModelAndView createUser(@ModelAttribute User user) {
 
         logger.info("Creating User. Data: "+user);
@@ -35,7 +35,7 @@ public class UserController {
         return new ModelAndView("/userForm");
     }
     
-    @RequestMapping("/cbvjrbweklbvebvjfbjjb/editUser")
+    @RequestMapping("/editUser")
     public ModelAndView editUser(@RequestParam long id, @ModelAttribute User user) {
 
     	logger.info("Updating the User for the Id "+id);
@@ -44,7 +44,7 @@ public class UserController {
         return new ModelAndView("userForm", "userObject", user);
     }
     
-    @RequestMapping("/cbvjrbweklbvebvjfbjjb/saveUser")
+    @RequestMapping("/saveUser")
     public ModelAndView saveUser(@ModelAttribute User user) {
 
         logger.info("Saving the User. Data : "+user);
@@ -57,7 +57,7 @@ public class UserController {
         return new ModelAndView("redirect:getAllUsers");
     }
     
-    @RequestMapping("/cbvjrbweklbvebvjfbjjb/deleteUser")
+    @RequestMapping("/deleteUser")
     public ModelAndView deleteUser(@RequestParam long id) {
 
         logger.info("Deleting the User. Id : "+id);
@@ -66,7 +66,7 @@ public class UserController {
         return new ModelAndView("redirect:getAllUsers");
     }
     
-    @RequestMapping(value = {"/cbvjrbweklbvebvjfbjjb/getAllUsers", "/cbvjrbweklbvebvjfbjjb"})
+    @RequestMapping(value = {"/getAllUsers", "/"})
     public ModelAndView getAllUsers() {
 
         logger.info("Getting the all Users.");
@@ -75,7 +75,7 @@ public class UserController {
         return new ModelAndView("/userList", "userList", userList);
     }
     
-    @RequestMapping("/cbvjrbweklbvebvjfbjjb/searchUser")
+    @RequestMapping("/searchUser")
     public ModelAndView searchUser(@RequestParam("searchName") String searchName) {
 
         logger.info("Searching the User. User Names: "+searchName);
